@@ -1,5 +1,5 @@
-FROM: centos:latest
-MAINTAINER: karandeepsingh165@gmail.com
+FROM centos:latest
+MAINTAINER karandeepsingh165@gmail.com
 RUN yum install httpd -y \
   zip \
   unzip
@@ -7,7 +7,6 @@ RUN yum install httpd -y \
   WORKDIR /var/www/html
   RUN unzip nocobot.zip
   RUN cp -rvf  nocobot/* .
-  RUM rm -rf nocobot nocobot.zip
+  RUN rm -rf nocobot nocobot.zip
   CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
   EXPOSE 80
-  
